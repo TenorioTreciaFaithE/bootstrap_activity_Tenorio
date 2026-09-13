@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DebugGarden | Grow Better Code</title>
+
+  <link rel="stylesheet" href="./bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --db-accent: #bf76e0;
+      --db-accent-dark: #bf76e0;
+    }
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .navbar-brand i {
+      color: var(--db-accent);
+    }
+    .btn-accent {
+      background-color: var(--db-accent);
+      border-color: var(--db-accent);
+      color: #ffffff;
+    }
+    .btn-accent:hover {
+      background-color: var(--db-accent-dark);
+      border-color: var(--db-accent-dark);
+      color: #fff;
+    }
+    .text-accent { color: var(--db-accent); }
+    .hero-section {
+      padding: 6rem 0 5rem;
+    }
+    .feature-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background-color: rgba(151, 22, 163, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      color: var(--db-accent);
+    }
+    .pricing-card.popular {
+      border: 2px solid var(--db-accent);
+      transform: scale(1.03);
+    }
+    .badge-soft {
+      background-color: rgba(89, 16, 104, 0.12);
+      color: var(--db-accent-dark);
+      font-weight: 500;
+    }
+    #theme-toggle-btn {
+      cursor: pointer;
+    }
+    .testimonial-card {
+      border-radius: 1rem;
+    }
+    footer a {
+      text-decoration: none;
+    }
+    [data-bs-theme="dark"] .badge-soft {
+      background-color: rgba(135, 22, 163, 0.2);
+      color: #bf76e0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#home">
+        <i class="bi bi-bug-fill"></i> DebugGarden
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle-btn" class="btn btn-outline-secondary btn-sm ms-lg-2" type="button" title="Toggle dark / light mode">
+              <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero-section">
+    <div class="container text-center">
+      <span class="badge rounded-pill badge-soft px-3 py-2 mb-3">
+        <i class="bi bi-stars"></i> Now supporting live pair-debugging sessions
+      </span>
+      <h1 class="display-4 fw-bold mb-3">
+        Cultivate cleaner code with <span class="text-accent">DebugGarden</span>
+      </h1>
+      <p class="lead text-body-secondary col-lg-8 mx-auto mb-4">
+        A collaborative workspace where developers plant, track, and squash bugs together.
+        Ship with confidence using our built-in code review tools, real-time logs, and
+        team debugging boards.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#pricing" class="btn btn-accent btn-lg px-4">
+          <i class="bi bi-rocket-takeoff-fill"></i> Get Started
+        </a>
+        <a href="https://github.com/twbs/bootstrap/releases/download/v5.3.8/bootstrap-5.3.8-dist.zip" class="btn btn-outline-secondary btn-lg px-4">
+          <i class="bi bi-box-arrow-in-down"></i> Download Bootstrap 5.3.8
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="py-5 bg-body-tertiary">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Everything you need to squash bugs faster</h2>
+        <p class="text-body-secondary">Built for teams who care about clean, maintainable code.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <div class="feature-icon-wrap mb-3">
+                <i class="bi bi-bug"></i>
+              </div>
+              <h5 class="card-title fw-bold">Smart Bug Tracking</h5>
+              <p class="card-text text-body-secondary">
+                Automatically tag, prioritize, and assign issues as soon as they're logged
+                by your team or your CI pipeline.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <div class="feature-icon-wrap mb-3">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h5 class="card-title fw-bold">Live Pair Debugging</h5>
+              <p class="card-text text-body-secondary">
+                Jump into a shared terminal and breakpoint session with any teammate,
+                no extra setup required.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <div class="feature-icon-wrap mb-3">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h5 class="card-title fw-bold">Health Dashboards</h5>
+              <p class="card-text text-body-secondary">
+                Visualize crash rates, resolution time, and code health trends across
+                every repository you manage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Flexible Pricing</h2>
+        <p class="text-body-secondary">Pick the plan that fits your team's growth stage.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card pricing-card h-100 shadow-sm">
+            <div class="card-body p-4 text-center">
+              <h6 class="text-uppercase text-body-secondary fw-bold">Starter</h6>
+              <h2 class="fw-bold my-3">₱0.00 <span class="fs-6 text-body-secondary fw-normal">/mo</span></h2>
+              <ul class="list-unstyled text-start mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>1 Garden (Project)</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>Community Support</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>Basic Bug Tracker</li>
+              </ul>
+              <button class="btn btn-outline-secondary w-100" type="button" onclick="showPlanAlert('Starter', '₱0.00/mo')">Sign Up Free</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card pricing-card popular h-100 shadow">
+            <div class="card-body p-4 text-center">
+              <span class="badge badge-soft mb-2">Most Popular</span>
+              <h6 class="text-uppercase text-body-secondary fw-bold">Pro Debugger</h6>
+              <h2 class="fw-bold my-3">₱49.00 <span class="fs-6 text-body-secondary fw-normal">/mo</span></h2>
+              <ul class="list-unstyled text-start mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>Unlimited Gardens</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>Priority Support</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>Live Pair Debugging</li>
+              </ul>
+              <button class="btn btn-accent w-100" type="button" onclick="showPlanAlert('Pro Debugger', '₱49.00/mo')">Get Started Pro</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card pricing-card h-100 shadow-sm">
+            <div class="card-body p-4 text-center">
+              <h6 class="text-uppercase text-body-secondary fw-bold">Enterprise</h6>
+              <h2 class="fw-bold my-3">₱109.00 <span class="fs-6 text-body-secondary fw-normal">/mo</span></h2>
+              <ul class="list-unstyled text-start mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>Dedicated Server</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>24/7 Phone Support</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i>SLA Guarantee</li>
+              </ul>
+              <button class="btn btn-outline-secondary w-100" type="button" onclick="showPlanAlert('Enterprise', '₱109.00/mo')">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-5 bg-body-tertiary">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">What People Say</h2>
+        <p class="text-body-secondary">Real feedback from developers using DebugGarden every day.</p>
+      </div>
+
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="card testimonial-card border-0 shadow-sm p-4 text-center">
+                  <i class="bi bi-quote fs-1 text-accent"></i>
+                  <p class="fs-5 fst-italic mb-4">
+                    DebugGarden cut our issue-resolution time in half. The live pairing
+                    feature alone is worth the upgrade.
+                  </p>
+                  <h6 class="fw-bold mb-0">Xian Josh, BSIT-Software Engineering Track</h6>
+                  <small class="text-body-secondary">Lead Developer, ByteHarvest Studios</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="card testimonial-card border-0 shadow-sm p-4 text-center">
+                  <i class="bi bi-quote fs-1 text-accent"></i>
+                  <p class="fs-5 fst-italic mb-4">
+                    The dark mode toggle and clean dashboard make daily standups so much
+                    easier to run. Our whole team switched over in a week.
+                  </p>
+                  <h6 class="fw-bold mb-0">Jeff Randel, BSIT-Business Analytics Track</h6>
+                  <small class="text-body-secondary">UI/UX Designer, PixelRoot Devs</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators position-relative mt-3">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active bg-dark" aria-current="true"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="bg-dark"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Get In Touch</h2>
+        <p class="text-body-secondary">Fill out the form below to send us a live message.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Faith" required>
+                <div class="invalid-feedback">Please enter your first name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Tenorio" required>
+                <div class="invalid-feedback">Please enter your last name.</div>
+              </div>
+              <div class="col-12">
+                <label for="emailAddress" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="faith.tenorio@example.com" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+              <div class="col-12">
+                <label for="messageBody" class="form-label">Message</label>
+                <textarea class="form-control" id="messageBody" name="messageBody" rows="4" placeholder="Tell us about your bug..." required></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-accent btn-lg px-5 mt-2">
+                  <i class="bi bi-send-fill"></i> Submit Form
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="border-top py-4 bg-body-tertiary">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <span class="text-body-secondary">&copy; 2026 DebugGarden. Built with Bootstrap 5.3.8.</span>
+      <div class="d-flex gap-3 fs-5">
+        <a href="#" class="text-body-secondary"><i class="bi bi-github"></i></a>
+        <a href="#" class="text-body-secondary"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-body-secondary"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="./bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const testimonialCarousel = document.getElementById('testimonialCarousel');
+      if (testimonialCarousel && window.bootstrap) {
+        new bootstrap.Carousel(testimonialCarousel, {
+          interval: 4000,
+          ride: 'carousel',
+          pause: 'hover'
+        });
+      }
+    });
+
+    (function () {
+      const htmlEl = document.documentElement;
+      const toggleBtn = document.getElementById('theme-toggle-btn');
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (!toggleBtn || !themeIcon) return;
+
+      function applyTheme(theme) {
+        htmlEl.setAttribute('data-bs-theme', theme);
+        themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+        localStorage.setItem('debuggarden-theme', theme);
+      }
+
+      const savedTheme = localStorage.getItem('debuggarden-theme') || 'light';
+      applyTheme(savedTheme);
+
+      toggleBtn.addEventListener('click', function () {
+        const current = htmlEl.getAttribute('data-bs-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+
+    function showPlanAlert(planName, price) {
+      Swal.fire({
+        icon: 'success',
+        title: `${planName} Plan Selected`,
+        text: `You selected the ${planName} plan at ${price}. Our team will reach out shortly!`,
+        confirmButtonColor: '#16a34a'
+      });
+    }
+
+    (function () {
+      const form = document.getElementById('contactForm');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          Swal.fire({
+            icon: 'warning',
+            title: 'Incomplete Form',
+            text: 'Please fill out all required fields correctly before submitting.',
+            confirmButtonColor: '#16a34a'
+          });
+          return;
+        }
+
+        form.classList.add('was-validated');
+
+        const firstName = document.getElementById('firstName').value.trim();
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: `Thanks, ${firstName}! Your message has been received. We'll get back to you soon.`,
+          confirmButtonColor: '#16a34a'
+        }).then(() => {
+          form.reset();
+          form.classList.remove('was-validated');
+        });
+      });
+
+      form.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+        Swal.fire({
+          icon: 'info',
+          title: 'Action Disabled',
+          text: 'Right-click is disabled on the contact form for security purposes.',
+          confirmButtonColor: '#16a34a'
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
